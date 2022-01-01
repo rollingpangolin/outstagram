@@ -10,14 +10,14 @@
             <div>
                 <div class="d-flex align-items-center">
                     <div class="pr-3">
-                        <img src="/storage/{{ $post->user->profile->image }}" class="w-50 rounded-circle" style="max-width: 75px">
+                        <img src="{{ $post->user->profile->profileImage() }}" class="w-50 rounded-circle" style="max-width: 75px">
                     </div>
                     <div>
                         <div class="font-weight-bold">
                             <a href="/profile/{{$post->user->id}}">
                                 <span class="text-dark">{{ $post->user->username }}</span>
                             </a>
-                            <a href="#">follow</a>
+                            <a href="#" class="pl-4">follow</a>
                         </div>
                     </div>
                 </div>        
