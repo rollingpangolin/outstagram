@@ -15,14 +15,15 @@ use App\Http\Controllers\FollowsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
+
+Route::get('/email', function(){
+    return new App\Mail\NewUserWelcomeMail();
+});
 
 Route::post('/follow/{user}',[FollowsController::class, 'store']);
 
+Route::get('/', [PostsController::class, 'index']);
 Route::get('/p/create', [PostsController::class, 'create'])->name('post.create');
 Route::get('/p/{post}', [PostsController::class, 'show']);
 Route::post('/p', [PostsController::class, 'store']);
